@@ -2,7 +2,7 @@ class BooksController < ApplicationController
 
 
   def index
-    @books = Book.all.order(:id)
+    @books = Book.all
     @book = Book.new
     @user = current_user
   end

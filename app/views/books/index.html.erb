@@ -1,4 +1,25 @@
 <%= render 'info', user: @user, book: @book %>
+    <div class="col-md-8 offset-md-1">
+      <h2>Books</h2>
+      <table class="table table-hover table-inverse">
+        <thead>
+          <tr>
+            <th></th>
+            <th>Title</th>
+            <th>Opinion</th>
+          </tr>
+        </thead>
+        <tbody>
+          <% @books.each do |book| %>
+          <td><%= image_tag user.get_profile_image %></td>
+          <td><%= book.title %></td>
+          <td><%= book.body %></td>
+          <% end %>
+        </tbody>
+      </table>
+    </div>
+  </div><!--部分テンプレ<div class="row"の閉じタグ -->
+</div><!--部分テンプレ<div class="container"の閉じタグ -->
 
 
 
