@@ -1,7 +1,10 @@
-<%= render 'info', user: @user, book: @book %>
-    <div class="col-md-8 offset-md-1">
+<div class="container"><!--部分テンプレのグリッドシステム"container"-->
+  <div class="row"><!--部分テンプレのグリッドシステム"row"-->
+    <%= render 'info', user: @user, book: @book %>
+    <div class="col-md-8 offset-md-1"><!--右側の表示-->
       <h2>Books</h2>
       <table class="table table-hover table-inverse">
+
         <thead>
           <tr>
             <th></th>
@@ -10,16 +13,17 @@
           </tr>
         </thead>
         <tbody>
-          <% @books.each do |book| %>
-          <td><%= image_tag user.get_profile_image %></td>
-          <td><%= book.title %></td>
-          <td><%= book.body %></td>
-          <% end %>
+           <% @books.each do |book| %>
+           <tr>
+            <td><%= image_tag book.user.get_profile_image %></td><td><%= book.title %></td><td><%= book.body %></td>
+           </tr>
+           <% end %>
         </tbody>
       </table>
     </div>
   </div><!--部分テンプレ<div class="row"の閉じタグ -->
 </div><!--部分テンプレ<div class="container"の閉じタグ -->
+
 
 
 

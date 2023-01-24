@@ -1,17 +1,52 @@
-<h2>User info</h2>
+<div class="container">
+  <div class="row">
+    <div class="mx-auto mt-3">
+      <h2>User info</h2>
+        <%= form_with model: @user do |f| %>
+        <!--<form>-->
+        <!--  <div class="form-container mb-2">-->
+        <!--    <label for="user_name">Name</label>-->
+        <!--    <input type="text" class="form-control name" id="@user :name">-->
+        <!--  </div>-->
+        <!--  <div class="form-container mb-2">-->
+        <!--    <label for="user_image">Image</label>-->
+        <!--    <input type="file" name="user[profile_image]" class="form-control-file user_image" accept="image/*" id="user_profile_image">-->
+        <!--  </div>-->
+        <!--  <div class="form-container mb-2">-->
+        <!--    <label for="user_introduction">Introduction</label>-->
+        <!--    <textarea class="form-control introduction" name="user[introduction]" id="user_introduction"></textarea>-->
+        <!--  </div>-->
+        <!--   <div class="form-container mb-2">-->
+        <!--    <input type="submit" class="btn btn-secondary" value="Update User" data-disable-with="Update User">-->
+        <!--  </div>-->
+        <!--</form>-->
+          <form enctype="multipert/form-data">
+            <div class="form-group">
+              <label for="user_name">Name</label>
+              <p>
+              <%= f.text_field :name, class: "form-control" %>
+              </p>
+            </div>
 
-<%= form_with model: @user do |f| %>
-  <p>Name</p>
-  <%= f.text_field :name %>
+            <div class="form-group">
+              <label for="user_image">Image</label>
+              <p>
+              <%= f.file_field :profile_image, accept: "image/*" %>
+              </p>
+            </div>
 
-  <p>image</p>
-  <%= f.file_field :profile_image, accept: "image/*" %>
+            <div class="form-group">
+              <label for="user_introduction">introduction</label>
+              <p>
+              <%= f.text_area :introduction, class: "form-control" %>
+              </p>
+            </div>
 
-  <p>introduction</p>
-  <%= f.text_area :introduction %>
-
-  <p>
-  <%= f.submit '投稿' %>
-  </p>
-
-<% end %>
+           <div class="form-group">
+            <%= f.submit 'Update User', class: "btn btn-secondary" %>
+           </div>
+          </form>
+        <% end %>
+    </div>
+  </div>
+</div>
