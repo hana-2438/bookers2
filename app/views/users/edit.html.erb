@@ -14,7 +14,7 @@
         </ul>
       <% end %>
         <%= form_with model: @user do |f| %>
-          <form enctype="multipert/form-data">
+
             <div class="form-group">
               <label for="user_name">Name</label>
               <p>
@@ -39,7 +39,7 @@
            <div class="form-group">
             <%= f.submit 'Update User', class: "btn btn-secondary" %>
            </div>
-          </form>
+
         <% end %>
     </div>
   </div>
