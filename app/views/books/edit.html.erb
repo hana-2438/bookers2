@@ -1,7 +1,18 @@
+
 <div class="container">
   <div class="row">
     <div class="mx-auto mt-3">
       <h2>Editing book</h2>
+      <% if @book.errors.any? %>
+        <h4>
+        <%= @book.errors.count %>errors prohibited this obj from being saved:
+        </h4>
+        <ul class="mx-auto ">
+          <% @book.errors.full_messages.each do |message| %>
+            <li><%= message %></li>
+          <% end %>
+        </ul>
+      <% end %>
         <%= form_with model: @book do |f| %>
           <form enctype="multipert/form-data">
             <div class="form-group">
@@ -13,7 +24,7 @@
             <div class="form-group">
               <label for="book_body">Opinion</label>
               <p>
-              <%= f.text_area :opinion, class: "form-control" %>
+              <%= f.text_area :body, class: "form-control" %>
               </p>
             </div>
 
